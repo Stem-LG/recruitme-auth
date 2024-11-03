@@ -22,6 +22,7 @@ public class MyUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found!");
 
         return User.builder()
+                .id(user.getId())
                 .username(user.getUsername())
                 .password(user.getPassword())
                 .email(user.getEmail())

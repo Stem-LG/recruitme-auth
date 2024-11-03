@@ -54,6 +54,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     User springUser = (User) authResult.getPrincipal();
 
     String jwt = JWT.create()
+        .withClaim("id", springUser.getId())
         .withClaim("username", springUser.getUsername())
         .withClaim("email", springUser.getEmail())
         .withClaim("role", springUser.getRole().name())
