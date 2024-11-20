@@ -18,4 +18,10 @@ public interface UserService {
     User saveUser(User user);
 
     User findUserByUsername(String username);
+
+    User findUserByEmail(String email);
+
+    public User validateToken(String code);
+
+    
 }

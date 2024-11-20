@@ -27,6 +27,11 @@ public class UserManagementController {
         return userService.findAllUsers();
     }
 
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Integer id) {
+        return userService.findUserById(id);
+    }
+
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Integer id, @RequestBody User user) {
         return userService.updateUser(id, user);
